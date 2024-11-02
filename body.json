@@ -1,0 +1,26 @@
+{
+  "endpoint": "allLog",
+  "page": 1,
+  "search": {
+    "key": "code",
+    "value": "2"
+  },
+  "user": {
+    "username": "admin",
+    "password": "1234567"
+  },
+  "formGoods": {
+    "id": 37,
+    "name": "Lontong",
+    "stock": 7,
+    "categoryId": 8,
+    "locationId": 2
+  },
+  "formCategory": {
+    "name": "Do"
+  },
+  "formLocation": {
+    "warehouse": "Warehouse C",
+    "rack": "Rak 3"
+  }
+}
