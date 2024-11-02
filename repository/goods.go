@@ -169,9 +169,9 @@ func (r *RepoGoods) Create(tx *sql.Tx) (int, error) {
 	return r.Goods.Id, nil
 }
 func (r *RepoGoods) Update(tx *sql.Tx, updateStock int) error {
-	query := `update "Goods" set stock=$1 where id=$2;`
+	query := `update "Goods" set stock=$1 where id=$2 returning id;`
 	fmt.Println(r.Goods.Name)
-	err := tx.QueryRow(query, updateStock, r.Goods.Id).Err()
+	err := tx.QueryRow(query, updateStock, r.Goods.Id).Scan(&r.Goods.Id)
 	if err != nil {
 		fmt.Println("Update Goods Error: ", err)
 		tx.Rollback()
